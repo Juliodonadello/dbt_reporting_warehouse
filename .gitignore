@@ -1,0 +1,7 @@
+venv
+venv/*
+logs
+logs/*
+bold_reporting/logs
+bold_reporting/logs/*
+logs/dbt.logs

@@ -1,0 +1,48 @@
+
+# Name your project! Project names should contain only lowercase characters
+# and underscores. A good package name should reflect your organization's
+# name or the intended use of these models
+name: 'bold_reporting'
+version: '1.0.0'
+
+# This setting configures which "profile" dbt uses for this project.
+profile: 'bold_reporting'
+
+# These configurations specify where dbt should look for different types of files.
+# The `model-paths` config, for example, states that models in this project can be
+# found in the "models/" directory. You probably won't need to change these!
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:         # directories to be removed by `dbt clean`
+  - "target"
+  - "dbt_packages"
+
+
+# Configuring models
+# Full documentation: https://docs.getdbt.com/docs/configuring-models
+
+vars:
+  units_table: '"public"."units"'
+  properties_table: '"public"."properties"'
+  unit_square_footage_items_table: '"public"."unit_square_footage_items"'
+  leases_table: '"public"."leases"'
+  lease_units_table: '"public"."lease_units"'
+  lease_deposits_table: '"public"."lease_deposits"'
+  tenants_table: '"public"."tenants"'
+  property_charge_controls_table:  '"public"."property_charge_controls"'
+  lease_recurring_charges_table: '"public"."lease_recurring_charges"'
+  lease_recurring_charge_amounts_table: '"public"."lease_recurring_charge_amounts"'
+
+# In this example config, we tell dbt to build all models in the example/
+# directory as views. These settings can be overridden in the individual model
+# files using the `{{ config(...) }}` macro.
+models:
+  bold_reporting:
+    # Config indicated by + and applies to all files under models/example/
+    example:
+      +materialized: view

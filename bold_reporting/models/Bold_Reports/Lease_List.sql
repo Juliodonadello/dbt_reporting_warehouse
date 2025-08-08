@@ -1,0 +1,19 @@
+SELECT 
+	LEASES_UNITS."LEASE_ID" AS "LEASE_ID",
+	LEASES_UNITS."LEASE_NAME" AS "LEASE_NAME",
+	LEASES_UNITS."LEASE_STATUS" AS "LEASE_STATUS",
+	LEASES_UNITS."lease_start" AS "lease_start",
+	LEASES_UNITS."lease_end" AS "lease_end",
+	LEASES_UNITS."UNIT_NAME" AS "UNIT_NAME",
+	LEASES_UNITS."UNIT_SQ_FT" AS "UNIT_SQ_FT",
+	LEASES_UNITS."TENANT_NAME" AS "TENANT_NAME",
+	LEASES_UNITS."PROP_NAME" AS "PROP_NAME"
+
+FROM {{ ref('leases_units') }} as LEASES_UNITS
+
+WHERE  --CAST(LEASES_UNITS."company_relation_id" AS INT) = CAST(@REAL_COMPANY_ID AS INT)
+	CAST(LEASES_UNITS."company_relation_id" AS INT) = CAST({{ var("REAL_COMPANY_ID") }} AS INT)
+    --AND LEASES_UNITS."PROP_NAME" IN (@Property_Name)
+	AND LEASES_UNITS."PROP_NAME" IN ({{ "'" ~ var("Property_Name") | join("', '") ~ "'" }})
+	--AND  CAST(LEASES_UNITS."LEASE_STATUS" AS TEXT) IN (@Lease_Status)
+	AND CAST(LEASES_UNITS."LEASE_STATUS" AS TEXT) IN ({{ "'" ~ var("Lease_Status") | join("', '") ~ "'" }})
