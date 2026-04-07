@@ -1,4 +1,3 @@
-{{ config(materialized='table') }}
 
 WITH CHARGE_CONTROL AS (
   	SELECT 
@@ -10,8 +9,8 @@ WITH CHARGE_CONTROL AS (
   	INNER JOIN {{ var('property_charge_controls_table') }} PROPS_C
   		ON PROPS_C."property_id" = PROPS_."id"
   	
-  	WHERE PROPS_."name" IN (@Property_Name)
-	AND CAST(PROPS_."company_relation_id" AS INT)  = CAST(@REAL_COMPANY_ID AS INT)
+  	--WHERE PROPS_."name" IN (@Property_Name)
+	--AND CAST(PROPS_."company_relation_id" AS INT)  = CAST(@REAL_COMPANY_ID AS INT)
 	),
 CHARGES_TOT AS (
   SELECT 
@@ -30,13 +29,41 @@ CHARGES_TOT AS (
 		ON LEASES_RC."id" = LEASES_RC_A."recurring_charge_id"
  	INNER JOIN {{ var('units_table') }} UNITS_
   		ON LEASES_RC."unit_id" =  UNITS_."id"
-  	INNER JOIN CHARGE_CONTROL
+  	LEFT JOIN CHARGE_CONTROL
   		ON CHARGE_CONTROL. "PROP_ID" = UNITS_."property_id"
   		AND CHARGE_CONTROL. "ITEM_ID" = LEASES_RC."order_entry_item_id"
   
-  	WHERE (LEASES_RC_A."deleted_at" IS NULL)
+  	WHERE LEASES_RC_A."effective_date" <= CURRENT_DATE
+	AND (LEASES_RC_A."deleted_at" IS NULL)
 	AND (LEASES_RC."deleted_at" IS NULL)
+	AND (
+		LEASES_RC_A."frequency" != 'One Time' --not a one time charge
+		OR
+		(
+			LEASES_RC_A."frequency" = 'One Time'
+			AND	 CAST(EXTRACT(DAY FROM (CURRENT_DATE - LEASES_RC_A."effective_date")) AS INTEGER) > 0
+		  	AND CAST(EXTRACT(DAY FROM (CURRENT_DATE - LEASES_RC_A."effective_date")) AS INTEGER) < 31
+		)--one time charge with less than a month differnce OJO: VER SI NO HAY QUE SACAR EL EXTRACT DAY. Ya que falla para los que son de un mes o un año exacto
+		)
+	AND (	
+	  	LEASES_RC."terminate_date" >= CURRENT_DATE
+		OR
+		LEASES_RC."terminate_date" is NULL 
+		)
+),
+MAX_CHARGES AS (
+ 	SELECT  "RCHARGE_ID" "RCHARGE_ID",
+   	MAX("EFFECTIVE_DATE") "EFFECTIVE_DATE"
+ 	FROM CHARGES_TOT
+	GROUP BY "RCHARGE_ID"
+ ),
+CHARGES AS ( 
+ SELECT CHARGES_TOT.*
+ FROM CHARGES_TOT
+ INNER JOIN MAX_CHARGES
+ 	ON CHARGES_TOT."RCHARGE_ID" =  MAX_CHARGES."RCHARGE_ID" 
+	AND CHARGES_TOT."EFFECTIVE_DATE" =  MAX_CHARGES."EFFECTIVE_DATE"
 )
 
 select *
-from CHARGES_TOT
+from CHARGES

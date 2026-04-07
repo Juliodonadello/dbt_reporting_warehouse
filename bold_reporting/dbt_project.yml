@@ -37,6 +37,8 @@ vars:
   property_charge_controls_table:  '"public"."property_charge_controls"'
   lease_recurring_charges_table: '"public"."lease_recurring_charges"'
   lease_recurring_charge_amounts_table: '"public"."lease_recurring_charge_amounts"'
+  company_accounts: '"public"."company_accounts_view"'
+
 
 # In this example config, we tell dbt to build all models in the example/
 # directory as views. These settings can be overridden in the individual model
@@ -44,5 +46,12 @@ vars:
 models:
   bold_reporting:
     # Config indicated by + and applies to all files under models/example/
-    example:
+    staging:
       +materialized: view
+      +schema: reporting
+    core:
+      +materialized: view
+      +schema: reporting
+    reporting:
+      +materialized: view
+      +schema: reporting

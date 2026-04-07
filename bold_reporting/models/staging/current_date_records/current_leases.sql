@@ -1,4 +1,3 @@
-{{ config(materialized='table') }}
 
 WITH LEASES AS (
   SELECT LEASES_."id" AS "LEASE_ID",
@@ -19,7 +18,8 @@ WITH LEASES AS (
 			WHEN MAX(CASE WHEN LEASES_D."refundable" = 'true' THEN 1 ELSE 0 END) = 1 THEN 'YES'
 			ELSE 'NO'
 		END AS "REFUNDABLE",
-		TENANTS_."name"  as "TENANT_NAME"
+		TENANTS_."name"  as "TENANT_NAME",
+		LEASES_."month_to_month" as "month_to_month"
   
   FROM {{ var('leases_table') }} as LEASES_
 	INNER JOIN {{ var('lease_units_table') }} LEASES_U
@@ -35,13 +35,16 @@ WITH LEASES AS (
   			OR (LEASES_."start" <= CURRENT_DATE AND LEASES_."end" IS NULL)
 		)
 		--AND LEASES_."status" = 'current'
-		AND (LEASES_."deleted_at" >= CURRENT_DATE OR LEASES_."deleted_at" IS NULL)
-		AND CASE WHEN CAST(LEASES_."month_to_month" AS TEXT) ='true' THEN 'True' ELSE 'False' END IN (@month_to_month) 
+		AND (LEASES_."deleted_at" IS NULL)
+		--AND CASE WHEN CAST(LEASES_."month_to_month" AS TEXT) ='true' THEN 'True' ELSE 'False' END IN (@month_to_month) 
   	
   GROUP BY 1,2,3,4,5,6,7,8,9,10,11,12,
 		CASE WHEN LEASES_D."id" IS NULL THEN 'NO' ELSE 'YES' END ,
-		TENANTS_."name"
+		TENANTS_."name", LEASES_."month_to_month"
 	)
 
 select *
-from LEASES
+from LEASES AS A
+--WHERE A.company_relation_id = (SELECT COMPANY_ACCOUNTS.id
+--                      FROM {{ var('company_accounts') }} AS COMPANY_ACCOUNTS
+--                      WHERE (COMPANY_ACCOUNTS.db_user = (CURRENT_USER)::text))

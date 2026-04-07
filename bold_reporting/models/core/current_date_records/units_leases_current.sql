@@ -1,4 +1,3 @@
-{{ config(materialized='table') }}
 
 WITH UNITS_LEASES AS (
 	SELECT 
@@ -10,31 +9,30 @@ WITH UNITS_LEASES AS (
 	LEASES."LEASE_ID" AS "LEASE_ID",
 	LEASES."LEASE_NAME" AS "LEASE_NAME",
 	LEASES."lease_created_at" AS "lease_created_at",
-	LEASES."start" AS "start",
+	LEASES."lease_start" AS "lease_start",
 	LEASES."lease_end" AS "lease_end",
 	LEASES."ACTUAL_MOVE_OUT" AS "ACTUAL_MOVE_OUT",
 	LEASES."INTENDED_MOVE_OUT" AS "INTENDED_MOVE_OUT",
 	LEASES."REASON_FOR_TERMINATION" AS "REASON_FOR_TERMINATION",
 	LEASES."company_relation_id" AS "company_relation_id",
-	LEASES."PROP_ID" AS "PROP_ID",
 	LEASES."LEASE_STATUS" AS "LEASE_STATUS",
 	CASE WHEN LEASES."LEASE_STATUS" = 'current' THEN 'OCCUPIED' ELSE 'VACANT' END AS "UNIT_STATUS",
 	LEASES."DEPOSIT" AS "DEPOSIT",
 	LEASES."REFUNDABLE" AS "REFUNDABLE",
-	LEASES."TENANT" AS "TENANT"
+	LEASES."TENANT_NAME" AS "TENANT_NAME"
 
   
-	FROM  {{ ref('3_current_units') }} as UNITS
-	LEFT JOIN  {{ ref('2_current_leases') }} as LEASES
+	FROM  {{ ref('current_units') }} as UNITS
+	LEFT JOIN  {{ ref('current_leases') }} as LEASES
 		ON  UNITS."UNIT_ID" = LEASES."UNIT_ID"
 		AND UNITS."PROP_ID" = LEASES."PROP_ID"
 
 	--WHERE LEASES."LEASE_STATUS" = 'current'
 
-	GROUP BY LEASES."LEASE_ID",
-		LEASES."UNIT_ID",
-		LEASES."TENANT"
+	--GROUP BY LEASES."LEASE_ID",
+	--	LEASES."UNIT_ID",
+	--	LEASES."TENANT_NAME"
 	)
 
 select *
-from LEASES_CHARGES
+from UNITS_LEASES

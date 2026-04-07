@@ -23,7 +23,7 @@ WITH UNITS AS (
   WHERE PROPS_."deleted_at" IS NULL
     AND (UNITS_."deleted_at" IS NULL)
     AND (UNITS_SF."deleted_at" IS NULL)
-	  AND UNITS_."status" = 'active'
+	  --AND UNITS_."status" = 'active'
 )
 
 select *

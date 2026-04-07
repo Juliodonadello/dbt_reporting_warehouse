@@ -1,7 +1,3 @@
-{{ config(
-  materialized='table',
-  schema='reporting'
-  ) }}
 
 WITH UNITS AS (
   SELECT 
@@ -9,6 +5,7 @@ WITH UNITS AS (
     PROPS_."name" AS "PROP_NAME",
     UNITS_."id" AS "UNIT_ID",
     UNITS_."name" AS "UNIT_NAME",
+    PROPS_."company_relation_id" AS "company_relation_id",
     MAX(COALESCE(uq."value", UNITS_."total_square_footage")) AS "UNIT_SQ_FT"
   
   FROM {{ var('units_table') }} UNITS_
@@ -28,17 +25,22 @@ WITH UNITS AS (
     ON uq."unit_id" = UNITS_."id"
   
   WHERE PROPS_."deleted_at" IS NULL
-    AND (UNITS_."deleted_at" >= CURRENT_DATE OR UNITS_."deleted_at" IS NULL)
+    AND (UNITS_."deleted_at" IS NULL)
     --AND PROPS_."name" IN (@Property_Name)
     --AND CAST(PROPS_."company_relation_id" AS INT) = CAST(@REAL_COMPANY_ID AS INT)
-	AND UNITS_."status" = 'active'
+	  --AND UNITS_."status" = 'active'
   
   GROUP BY 
     PROPS_."id",
     PROPS_."name",
     UNITS_."id",
-    UNITS_."name"
+    UNITS_."name",
+    PROPS_."company_relation_id"
 )
 
 select *
-from UNITS
+from UNITS AS A
+
+--WHERE A."company_relation_id" = (SELECT COMPANY_ACCOUNTS.id
+--                      FROM {{ var('company_accounts') }} AS COMPANY_ACCOUNTS
+--                      WHERE (COMPANY_ACCOUNTS.db_user = (CURRENT_USER)::text))
