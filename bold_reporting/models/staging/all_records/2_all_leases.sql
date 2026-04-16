@@ -1,5 +1,3 @@
-{{ config(materialized='table') }}
-
 WITH LEASES AS (
   SELECT LEASES_."id" AS "LEASE_ID",
 		LEASES_."name" AS "LEASE_NAME",

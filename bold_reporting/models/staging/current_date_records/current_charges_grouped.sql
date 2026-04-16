@@ -1,5 +1,3 @@
-{{ config(materialized='table') }}
-
 WITH CHARGE_CONTROL AS (
   	SELECT 
   			PROPS_."id" AS "PROP_ID",

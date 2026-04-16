@@ -22,6 +22,10 @@ clean-targets:         # directories to be removed by `dbt clean`
   - "target"
   - "dbt_packages"
 
+on-run-end:
+  - "grant usage on schema reporting to public"
+  - "grant select on all tables in schema reporting to public"
+
 
 # Configuring models
 # Full documentation: https://docs.getdbt.com/docs/configuring-models
@@ -49,9 +53,15 @@ models:
     staging:
       +materialized: view
       +schema: reporting
+      +post-hook:
+        - "ALTER VIEW {{ this }} SET (security_invoker = true)"
     core:
       +materialized: view
       +schema: reporting
+      +post-hook:
+        - "ALTER VIEW {{ this }} SET (security_invoker = true)"
     reporting:
       +materialized: view
       +schema: reporting
+      +post-hook:
+        - "ALTER VIEW {{ this }} SET (security_invoker = true)"

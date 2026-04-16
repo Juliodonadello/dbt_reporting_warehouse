@@ -1,5 +1,3 @@
-{{ config(materialized='table') }}
-
 WITH LEASES_CHARGES AS (
 	SELECT 
   	LEASES."LEASE_ID",

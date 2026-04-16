@@ -30,6 +30,6 @@ WITH LEASES_UNITS AS (
 
 select *
 from LEASES_UNITS AS A
-WHERE A.company_relation_id = (SELECT COMPANY_ACCOUNTS.id
-                      FROM {{ var('company_accounts') }} AS COMPANY_ACCOUNTS
-                      WHERE (COMPANY_ACCOUNTS.db_user = (CURRENT_USER)::text))
+--WHERE A.company_relation_id = (SELECT COMPANY_ACCOUNTS.id
+--                      FROM {{ var('company_accounts') }} AS COMPANY_ACCOUNTS
+--                      WHERE (COMPANY_ACCOUNTS.db_user = (CURRENT_USER)::text))
