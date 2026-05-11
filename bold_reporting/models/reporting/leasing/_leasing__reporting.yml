@@ -1,0 +1,8 @@
+version: 2
+
+models:
+  - name: rpt_summarized_rent_roll
+    description: >
+      Base consumible para Bold Reports. La vista preserva rangos de vigencia
+      para que Bold aplique filtros runtime con @AsOfDate, @Property_Name,
+      @REAL_COMPANY_ID, @floorPlan y @month_to_month sin recompilar dbt.

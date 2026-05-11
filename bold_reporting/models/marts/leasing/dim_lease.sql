@@ -1,0 +1,20 @@
+select
+    lease_id,
+    lease_name,
+    property_id,
+    unit_id,
+    lease_created_at,
+    lease_start,
+    unit_move_in,
+    lease_end,
+    lease_raw_status,
+    lease_status,
+    month_to_month_label,
+    month_to_month_flag,
+    lease_termination,
+    lease_valid_from,
+    lease_valid_to,
+    deposit,
+    refundable,
+    tenant
+from {{ ref('int_leases_enriched') }}

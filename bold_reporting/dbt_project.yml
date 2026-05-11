@@ -60,6 +60,16 @@ models:
       +schema: reporting
       +post-hook:
         - "ALTER VIEW {{ this }} SET (security_invoker = true)"
+    intermediate:
+      +materialized: view
+      +schema: reporting
+      +post-hook:
+        - "ALTER VIEW {{ this }} SET (security_invoker = true)"
+    marts:
+      +materialized: view
+      +schema: reporting
+      +post-hook:
+        - "ALTER VIEW {{ this }} SET (security_invoker = true)"
     reporting:
       +materialized: view
       +schema: reporting

@@ -1,0 +1,27 @@
+version: 2
+
+models:
+  - name: dim_property
+    columns:
+      - name: property_id
+        tests:
+          - not_null
+          - unique
+
+  - name: dim_unit
+    columns:
+      - name: unit_id
+        tests:
+          - not_null
+
+  - name: dim_lease
+    columns:
+      - name: lease_id
+        tests:
+          - not_null
+
+  - name: fct_lease_charge
+    columns:
+      - name: recurring_charge_id
+        tests:
+          - not_null

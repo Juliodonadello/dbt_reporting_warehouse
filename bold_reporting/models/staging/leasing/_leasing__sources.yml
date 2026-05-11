@@ -1,0 +1,17 @@
+version: 2
+
+sources:
+  - name: app
+    schema: public
+    tables:
+      - name: properties
+      - name: units
+      - name: unit_square_footage_items
+      - name: leases
+      - name: lease_units
+      - name: lease_deposits
+      - name: tenants
+      - name: property_charge_controls
+      - name: lease_recurring_charges
+      - name: lease_recurring_charge_amounts
+
