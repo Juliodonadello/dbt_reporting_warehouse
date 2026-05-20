@@ -1,5 +1,18 @@
-WITH LEASES_UNITS AS (
-	SELECT 
+WITH UNITS AS (
+	SELECT
+		"PROP_ID",
+		"PROP_NAME",
+		"UNIT_ID",
+		"UNIT_NAME",
+		"company_relation_id",
+		COALESCE("UNIT_SF_VALUE", "UNIT_TOTAL_SQ_FT") AS "UNIT_SQ_FT",
+		"_valid_from",
+		"_valid_to"
+	FROM {{ ref('3_all_units_sqft') }}
+	WHERE "UNIT_SF_TYPE" = 'Total'
+),
+LEASES_UNITS AS (
+	SELECT
 	UNITS."PROP_ID" AS "PROP_ID",
     UNITS."PROP_NAME" AS "PROP_NAME",
     UNITS."UNIT_ID" AS "UNIT_ID",
@@ -18,18 +31,28 @@ WITH LEASES_UNITS AS (
 	LEASES."DEPOSIT" AS "DEPOSIT",
 	LEASES."REFUNDABLE" AS "REFUNDABLE",
 	LEASES."TENANT_NAME" AS "TENANT_NAME",
-	LEASES."company_relation_id" as "company_relation_id"
+	LEASES."company_relation_id" as "company_relation_id",
+	GREATEST(
+		LEASES."_valid_from",
+		COALESCE(UNITS."_valid_from", LEASES."_valid_from")
+	) AS "_valid_from",
+	LEAST(
+		LEASES."_valid_to",
+		COALESCE(UNITS."_valid_to", LEASES."_valid_to")
+	) AS "_valid_to"
 
-  
-	FROM  {{ ref('current_leases') }} as LEASES
-	LEFT JOIN  {{ ref('current_units') }} as UNITS
+	FROM  {{ ref('2_all_leases') }} as LEASES
+	LEFT JOIN  UNITS
 		ON  UNITS."UNIT_ID" = LEASES."UNIT_ID"
 		AND UNITS."PROP_ID" = LEASES."PROP_ID"
-		
+		AND UNITS."_valid_from" < LEASES."_valid_to"
+		AND UNITS."_valid_to" > LEASES."_valid_from"
+
 	)
 
 select *
 from LEASES_UNITS AS A
+where "_valid_from" < "_valid_to"
 --WHERE A.company_relation_id = (SELECT COMPANY_ACCOUNTS.id
 --                      FROM {{ var('company_accounts') }} AS COMPANY_ACCOUNTS
 --                      WHERE (COMPANY_ACCOUNTS.db_user = (CURRENT_USER)::text))

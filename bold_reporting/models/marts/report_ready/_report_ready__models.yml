@@ -1,0 +1,18 @@
+version: 2
+
+models:
+  - name: fct_mixed_unit_lease_charge_history
+    description: General report-ready fact grain for units, leases, occupancy, and charges over validity ranges.
+    columns:
+      - name: PROP_ID
+        tests:
+          - not_null
+      - name: UNIT_ID
+        tests:
+          - not_null
+      - name: _valid_from
+        tests:
+          - not_null
+      - name: _valid_to
+        tests:
+          - not_null

@@ -1,0 +1,38 @@
+WITH LEASES_CHARGES AS (
+	SELECT
+		LEASES."LEASE_ID",
+		LEASES."UNIT_ID",
+		MIN(LEASES."lease_created_at") "lease_created_at", --because of difference in seconds, can't be grouped
+		MIN(LEASES."lease_start") "start",
+		MAX(LEASES."lease_end") "lease_end", --because of difference in seconds, can't be grouped
+		LEASES."TENANT_NAME" AS "TENANT",
+		COALESCE(MAX(CASE WHEN LEASES."LEASE_STATUS" = 'current' THEN 'OCCUPIED' END), MAX(LEASES."LEASE_STATUS")) AS "LEASE_STATUS",
+		COALESCE(MAX(CASE WHEN LEASES."DEPOSIT" = 'YES' THEN 'YES' END), MAX(LEASES."DEPOSIT")) AS "DEPOSIT",
+		COALESCE(MAX(CASE WHEN LEASES."REFUNDABLE" = 'YES' THEN 'YES' END), MAX(LEASES."REFUNDABLE")) AS "REFUNDABLE",
+		COALESCE(SUM(CASE WHEN CHARGES."FREQUENCY" = 'Annually' THEN CHARGES."RENT_CHARGE" / 12 ELSE CHARGES."RENT_CHARGE" END), 0) AS "RENT_AMOUNT",
+		COALESCE(SUM(CASE WHEN CHARGES."FREQUENCY" = 'Annually' THEN CHARGES."OTHER_CHARGE" / 12 ELSE CHARGES."OTHER_CHARGE" END), 0) AS "OTHER_AMOUNT",
+		COALESCE(SUM(CASE WHEN CHARGES."FREQUENCY" = 'Annually' THEN CHARGES."RENT_CHARGE" ELSE CHARGES."RENT_CHARGE" * 12 END), 0) AS "ANNUAL_RENT_AMOUNT",
+		COALESCE(SUM(CASE WHEN CHARGES."FREQUENCY" = 'Annually' THEN CHARGES."OTHER_CHARGE" ELSE CHARGES."OTHER_CHARGE" * 12 END), 0) AS "ANNUAL_OTHER_AMOUNT",
+		GREATEST(
+			MIN(LEASES."_valid_from"),
+			COALESCE(MAX(CHARGES."_valid_from"), MIN(LEASES."_valid_from"))
+		) AS "_valid_from",
+		LEAST(
+			MAX(LEASES."_valid_to"),
+			COALESCE(MIN(CHARGES."_valid_to"), MAX(LEASES."_valid_to"))
+		) AS "_valid_to"
+
+	FROM  {{ ref('current_leases') }} as LEASES
+	LEFT JOIN  {{ ref('current_charges_grouped') }} as CHARGES
+		ON  LEASES."LEASE_ID" = CHARGES."LEASE_ID"
+		AND LEASES."UNIT_ID" = CHARGES."UNIT_ID"
+		AND LEASES."_valid_from" < CHARGES."_valid_to"
+		AND LEASES."_valid_to" > CHARGES."_valid_from"
+	GROUP BY LEASES."LEASE_ID",
+		LEASES."UNIT_ID",
+		LEASES."TENANT_NAME"
+	)
+
+select *
+from LEASES_CHARGES
+where "_valid_from" < "_valid_to"

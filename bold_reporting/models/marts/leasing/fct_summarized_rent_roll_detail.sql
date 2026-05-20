@@ -111,18 +111,22 @@ detail_filtered as (
 
 ),
 
-leases_per_unit_range as (
+leases_per_unit as (
 
     select
-        unit_id,
-        report_valid_from,
-        report_valid_to,
-        count(distinct lease_id) filter (where lease_id is not null) as leases_count
-    from detail_filtered
+        df.unit_id,
+        df.report_valid_from,
+        df.report_valid_to,
+        count(distinct uwl.lease_id) filter (where uwl.lease_id is not null) as leases_count
+    from detail_filtered df
+    left join unit_with_leases uwl
+        on df.unit_id = uwl.unit_id
+       and df.report_valid_from < uwl.lease_stage_valid_to
+       and df.report_valid_to > uwl.lease_stage_valid_from
     group by
-        unit_id,
-        report_valid_from,
-        report_valid_to
+        df.unit_id,
+        df.report_valid_from,
+        df.report_valid_to
 
 )
 
@@ -158,10 +162,10 @@ select
     df.other_amount,
     df.annual_rent_amount,
     df.annual_other_amount,
-    lpur.leases_count,
+    lpu.leases_count,
     case
-        when coalesce(lpur.leases_count, 0) = 0 then df.unit_sq_ft
-        else df.unit_sq_ft / lpur.leases_count
+        when coalesce(lpu.leases_count, 0) = 0 then df.unit_sq_ft
+        else df.unit_sq_ft / lpu.leases_count
     end as unit_sq_ft_fix,
     case
         when coalesce(df.property_total_sq_ft, 0) = 0 then 0
@@ -169,8 +173,8 @@ select
     end as pct_of_property,
     case
         when coalesce(df.property_total_sq_ft, 0) = 0 then 0
-        when coalesce(lpur.leases_count, 0) = 0 then df.unit_sq_ft / df.property_total_sq_ft * 100
-        else (df.unit_sq_ft / lpur.leases_count) / df.property_total_sq_ft * 100
+        when coalesce(lpu.leases_count, 0) = 0 then df.unit_sq_ft / df.property_total_sq_ft * 100
+        else (df.unit_sq_ft / lpu.leases_count) / df.property_total_sq_ft * 100
     end as pct_of_property_fix,
     case
         when coalesce(df.unit_sq_ft, 0) = 0 then 0
@@ -183,8 +187,7 @@ select
     df.report_valid_from,
     df.report_valid_to
 from detail_filtered df
-left join leases_per_unit_range lpur
-    on df.unit_id = lpur.unit_id
-   and df.report_valid_from = lpur.report_valid_from
-   and df.report_valid_to = lpur.report_valid_to
-
+left join leases_per_unit lpu
+    on df.unit_id = lpu.unit_id
+   and df.report_valid_from = lpu.report_valid_from
+   and df.report_valid_to = lpu.report_valid_to

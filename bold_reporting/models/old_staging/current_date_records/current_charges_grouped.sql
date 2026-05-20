@@ -1,0 +1,27 @@
+WITH CHARGES_TOT AS (
+  SELECT
+		MAX("RCHARGE_ID") AS "RCHARGE_ID",
+		"LEASE_ID" AS "LEASE_ID",
+		CASE WHEN "BASE_RENT" = 1 THEN "AMOUNT" ELSE 0 END AS "RENT_CHARGE",
+		CASE WHEN "BASE_RENT" = 0 THEN "AMOUNT" ELSE 0 END AS "OTHER_CHARGE",
+		"EFFECTIVE_DATE" AS "EFFECTIVE_DATE",
+		"PROP_ID" AS "PROP_ID",
+		"UNIT_ID" AS "UNIT_ID",
+		"FREQUENCY" AS "FREQUENCY",
+		"_valid_from" AS "_valid_from",
+		"_valid_to" AS "_valid_to"
+	FROM {{ ref('current_charges') }}
+	GROUP BY
+		"LEASE_ID",
+		CASE WHEN "BASE_RENT" = 1 THEN "AMOUNT" ELSE 0 END,
+		CASE WHEN "BASE_RENT" = 0 THEN "AMOUNT" ELSE 0 END,
+		"EFFECTIVE_DATE",
+		"PROP_ID",
+		"UNIT_ID",
+		"FREQUENCY",
+		"_valid_from",
+		"_valid_to"
+)
+
+select *
+from CHARGES_TOT
