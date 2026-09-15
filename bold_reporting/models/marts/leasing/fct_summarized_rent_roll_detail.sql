@@ -1,4 +1,4 @@
-with unit_base as (
+with unit_base as not materialized (
 
     select
         du.property_id as prop_id,
@@ -17,15 +17,18 @@ with unit_base as (
         least(fus.unit_sqft_valid_to, fps.property_sqft_valid_to) as base_valid_to
     from {{ ref('dim_unit') }} du
     inner join {{ ref('fct_unit_sqft') }} fus
-        on du.unit_id = fus.unit_id
+        on du.property_id = fus.property_id
+       and du.company_relation_id = fus.company_relation_id
+       and du.unit_id = fus.unit_id
     inner join {{ ref('fct_property_sqft') }} fps
         on du.property_id = fps.property_id
+       and du.company_relation_id = fps.company_relation_id
        and fus.unit_sqft_valid_from < fps.property_sqft_valid_to
        and fus.unit_sqft_valid_to > fps.property_sqft_valid_from
 
 ),
 
-unit_with_leases as (
+unit_with_leases as not materialized (
 
     select
         ub.*,
@@ -34,6 +37,7 @@ unit_with_leases as (
         dl.lease_start,
         dl.unit_move_in,
         dl.lease_end,
+        dl.lease_raw_status,
         dl.lease_status,
         dl.tenant,
         dl.deposit,
@@ -42,17 +46,20 @@ unit_with_leases as (
         dl.lease_termination,
         dl.lease_valid_from,
         dl.lease_valid_to,
+        dl.lease_report_valid_to,
         greatest(ub.base_valid_from, coalesce(dl.lease_valid_from, date '1900-01-01')) as lease_stage_valid_from,
-        least(ub.base_valid_to, coalesce(dl.lease_valid_to, date '9999-12-31')) as lease_stage_valid_to
+        least(ub.base_valid_to, coalesce(dl.lease_report_valid_to, date '9999-12-31')) as lease_stage_valid_to
     from unit_base ub
     left join {{ ref('dim_lease') }} dl
-        on ub.unit_id = dl.unit_id
-       and ub.base_valid_from < dl.lease_valid_to
+        on ub.prop_id = dl.property_id
+       and ub.company_relation_id = dl.company_relation_id
+       and ub.unit_id = dl.unit_id
+       and ub.base_valid_from < dl.lease_report_valid_to
        and ub.base_valid_to > dl.lease_valid_from
 
 ),
 
-detail_rows as (
+detail_rows as not materialized (
 
     select
         uwl.prop_id,
@@ -68,7 +75,8 @@ detail_rows as (
         uwl.lease_start,
         uwl.unit_move_in,
         uwl.lease_end,
-        case when uwl.lease_created_at is not null then 'OCCUPIED' else 'VACANT' end as occupancy_status,
+        uwl.lease_raw_status,
+        case when uwl.lease_id is not null then 'OCCUPIED' else 'VACANT' end as occupancy_status,
         uwl.lease_status,
         uwl.tenant,
         uwl.deposit,
@@ -86,47 +94,16 @@ detail_rows as (
         flc.other_amount,
         flc.annual_rent_amount,
         flc.annual_other_amount,
-        greatest(
-            uwl.lease_stage_valid_from,
-            coalesce(flc.charge_valid_from, date '1900-01-01')
-        ) as report_valid_from,
-        least(
-            uwl.lease_stage_valid_to,
-            coalesce(flc.charge_valid_to, date '9999-12-31')
-        ) as report_valid_to
+        greatest(uwl.lease_stage_valid_from, coalesce(flc.charge_valid_from, date '1900-01-01')) as report_valid_from,
+        least(uwl.lease_stage_valid_to, coalesce(flc.charge_valid_to, date '9999-12-31')) as report_valid_to
     from unit_with_leases uwl
     left join {{ ref('fct_lease_charge') }} flc
-        on uwl.lease_id = flc.lease_id
+        on uwl.prop_id = flc.property_id
+       and uwl.company_relation_id = flc.company_relation_id
+       and uwl.lease_id = flc.lease_id
        and uwl.unit_id = flc.unit_id
        and uwl.lease_stage_valid_from < flc.charge_valid_to
        and uwl.lease_stage_valid_to > flc.charge_valid_from
-
-),
-
-detail_filtered as (
-
-    select *
-    from detail_rows
-    where report_valid_from < report_valid_to
-
-),
-
-leases_per_unit as (
-
-    select
-        df.unit_id,
-        df.report_valid_from,
-        df.report_valid_to,
-        count(distinct uwl.lease_id) filter (where uwl.lease_id is not null) as leases_count
-    from detail_filtered df
-    left join unit_with_leases uwl
-        on df.unit_id = uwl.unit_id
-       and df.report_valid_from < uwl.lease_stage_valid_to
-       and df.report_valid_to > uwl.lease_stage_valid_from
-    group by
-        df.unit_id,
-        df.report_valid_from,
-        df.report_valid_to
 
 )
 
@@ -144,6 +121,7 @@ select
     df.lease_start,
     df.unit_move_in,
     df.lease_end,
+    df.lease_raw_status,
     df.occupancy_status,
     df.lease_status,
     df.tenant,
@@ -162,32 +140,7 @@ select
     df.other_amount,
     df.annual_rent_amount,
     df.annual_other_amount,
-    lpu.leases_count,
-    case
-        when coalesce(lpu.leases_count, 0) = 0 then df.unit_sq_ft
-        else df.unit_sq_ft / lpu.leases_count
-    end as unit_sq_ft_fix,
-    case
-        when coalesce(df.property_total_sq_ft, 0) = 0 then 0
-        else df.unit_sq_ft / df.property_total_sq_ft * 100
-    end as pct_of_property,
-    case
-        when coalesce(df.property_total_sq_ft, 0) = 0 then 0
-        when coalesce(lpu.leases_count, 0) = 0 then df.unit_sq_ft / df.property_total_sq_ft * 100
-        else (df.unit_sq_ft / lpu.leases_count) / df.property_total_sq_ft * 100
-    end as pct_of_property_fix,
-    case
-        when coalesce(df.unit_sq_ft, 0) = 0 then 0
-        else coalesce(df.annual_rent_amount, 0) / df.unit_sq_ft
-    end as annual_rent_per_sq_ft,
-    case
-        when coalesce(df.unit_sq_ft, 0) = 0 then 0
-        else coalesce(df.annual_other_amount, 0) / df.unit_sq_ft
-    end as annual_other_per_sq_ft,
     df.report_valid_from,
     df.report_valid_to
-from detail_filtered df
-left join leases_per_unit lpu
-    on df.unit_id = lpu.unit_id
-   and df.report_valid_from = lpu.report_valid_from
-   and df.report_valid_to = lpu.report_valid_to
+from detail_rows df
+where df.report_valid_from < df.report_valid_to

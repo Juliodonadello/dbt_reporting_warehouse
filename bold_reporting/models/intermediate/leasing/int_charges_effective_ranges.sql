@@ -1,4 +1,4 @@
-with charges_base as (
+with charges_base as not materialized (
 
     select
         lrc.recurring_charge_id,
@@ -28,7 +28,7 @@ with charges_base as (
 
 ),
 
-charges_with_ranges as (
+charges_with_next_effective_date as not materialized (
 
     select
         recurring_charge_id,
@@ -41,16 +41,29 @@ charges_with_ranges as (
         terminate_date,
         frequency,
         effective_date as charge_valid_from,
-        coalesce(
-            lead(effective_date) over (
-                partition by recurring_charge_id
-                order by effective_date
-            ),
-            date '9999-12-31'
-        ) as charge_valid_to,
+        lead(effective_date) over (
+            partition by company_relation_id, property_id, recurring_charge_id
+            order by effective_date, amount, frequency
+        ) as next_effective_date,
         case when base_rent_flag = 1 then amount else 0 end as rent_charge,
         case when base_rent_flag = 0 then amount else 0 end as other_charge
     from charges_base
+
+),
+
+charges_with_ranges as not materialized (
+
+    select
+        *,
+        least(
+            coalesce(next_effective_date, date '9999-12-31'),
+            coalesce(terminate_date + 1, date '9999-12-31'),
+            case
+                when frequency = 'One Time' then charge_valid_from + 31
+                else date '9999-12-31'
+            end
+        ) as charge_valid_to
+    from charges_with_next_effective_date
 
 )
 
@@ -66,8 +79,8 @@ select
     frequency,
     charge_valid_from,
     charge_valid_to,
-    case when frequency = 'One Time' then charge_valid_from + interval '31 day' else null end as one_time_window_end,
+    case when frequency = 'One Time' then charge_valid_from + 31 else null end as one_time_window_end,
     rent_charge,
     other_charge
 from charges_with_ranges
-
+where charge_valid_from < charge_valid_to

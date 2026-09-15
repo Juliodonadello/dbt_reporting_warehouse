@@ -7,3 +7,7 @@ bold_reporting/logs/*
 logs/dbt.logs
 .idea
 .idea/*
+bold_reporting/tools/*
+bold_reporting/tools
+debugging_bold_reporting
+debugging_bold_reporting/*

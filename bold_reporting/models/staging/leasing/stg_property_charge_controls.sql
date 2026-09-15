@@ -4,4 +4,4 @@ select
     base_rent,
     deleted_at
 from {{ source('app', 'property_charge_controls') }}
-
+where deleted_at is null

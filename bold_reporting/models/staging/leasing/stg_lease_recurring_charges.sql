@@ -6,4 +6,4 @@ select
     terminate_date,
     deleted_at
 from {{ source('app', 'lease_recurring_charges') }}
-
+where deleted_at is null

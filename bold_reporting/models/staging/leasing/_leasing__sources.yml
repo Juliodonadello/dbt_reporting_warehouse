@@ -7,11 +7,15 @@ sources:
       - name: properties
       - name: units
       - name: unit_square_footage_items
+      - name: property_square_footage_items
       - name: leases
       - name: lease_units
       - name: lease_deposits
+      - name: lease_deposit_refunds
+      - name: lease_late_charges
+      - name: lease_late_charge_steps
+      - name: lease_options
       - name: tenants
       - name: property_charge_controls
       - name: lease_recurring_charges
       - name: lease_recurring_charge_amounts
-

@@ -5,4 +5,4 @@ select
     as_of_date,
     deleted_at
 from {{ source('app', 'unit_square_footage_items') }}
-
+where deleted_at is null

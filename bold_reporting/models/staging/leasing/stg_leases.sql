@@ -11,3 +11,4 @@ select
     lease_termination,
     deleted_at
 from {{ source('app', 'leases') }}
+where deleted_at is null

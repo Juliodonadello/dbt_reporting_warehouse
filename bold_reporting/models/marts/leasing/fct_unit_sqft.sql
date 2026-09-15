@@ -3,6 +3,6 @@ select
     usr.property_id,
     usr.valid_from as unit_sqft_valid_from,
     usr.valid_to as unit_sqft_valid_to,
-    usr.unit_sq_ft
+    usr.unit_sq_ft,
+    usr.company_relation_id
 from {{ ref('int_unit_sqft_ranges') }} usr
-

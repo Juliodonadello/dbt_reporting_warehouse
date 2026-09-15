@@ -2,6 +2,7 @@ select
     lease_id,
     lease_name,
     property_id,
+    company_relation_id,
     unit_id,
     lease_created_at,
     lease_start,
@@ -14,6 +15,7 @@ select
     lease_termination,
     lease_valid_from,
     lease_valid_to,
+    lease_report_valid_to,
     deposit,
     refundable,
     tenant

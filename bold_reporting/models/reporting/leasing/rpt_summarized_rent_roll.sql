@@ -12,7 +12,10 @@ select
     tenant,
     lease_created_at,
     lease_start,
+    unit_move_in,
     lease_end,
+    lease_raw_status,
+    lease_termination,
     deposit,
     refundable,
     recurring_charge_id,
@@ -26,14 +29,7 @@ select
     other_amount,
     annual_rent_amount,
     annual_other_amount,
-    leases_count,
-    unit_sq_ft_fix,
-    pct_of_property,
-    pct_of_property_fix,
-    annual_rent_per_sq_ft,
-    annual_other_per_sq_ft,
     month_to_month_label,
     report_valid_from,
     report_valid_to
 from {{ ref('fct_summarized_rent_roll_detail') }}
-

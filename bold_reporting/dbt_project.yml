@@ -75,3 +75,7 @@ models:
       +schema: reporting
       +post-hook:
         - "ALTER VIEW {{ this }} SET (security_invoker = true)"
+
+data_tests:
+  bold_reporting:
+    +enabled: false

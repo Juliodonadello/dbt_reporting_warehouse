@@ -5,4 +5,4 @@ select
     effective_date,
     deleted_at
 from {{ source('app', 'lease_recurring_charge_amounts') }}
-
+where deleted_at is null

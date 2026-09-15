@@ -4,4 +4,4 @@ select
     move_in,
     deleted_at
 from {{ source('app', 'lease_units') }}
-
+where deleted_at is null
