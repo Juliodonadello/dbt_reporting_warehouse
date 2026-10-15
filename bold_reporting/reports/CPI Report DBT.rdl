@@ -1,0 +1,2174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns:df="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition/defaultfontfamily" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition">
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>54.75pt</Height>
+        <ReportItems>
+          <Tablix Name="MainTable">
+            <Left>0pt</Left>
+            <Top>0pt</Top>
+            <Height>46.5pt</Height>
+            <Width>942pt</Width>
+            <Style>
+              <FontFamily>Arial</FontFamily>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+            <CustomProperties>
+              <CustomProperty>
+                <Name>MaxRowCount</Name>
+                <Value>100000</Value>
+              </CustomProperty>
+              <CustomProperty>
+                <Name>MaxColumnCount</Name>
+                <Value>20</Value>
+              </CustomProperty>
+            </CustomProperties>
+            <DataSetName>Lease_cpi</DataSetName>
+            <PageBreak>
+              <BreakLocation>End</BreakLocation>
+            </PageBreak>
+            <TablixBody>
+              <TablixColumns>
+                <TablixColumn>
+                  <Width>72pt</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>72pt</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>72pt</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>81pt</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>135.75pt</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>45pt</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>81.75pt</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>63.75pt</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>57.75pt</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>69pt</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>66.75pt</Width>
+                </TablixColumn>
+              </TablixColumns>
+              <TablixRows>
+                <TablixRow>
+                  <Height>27pt</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="TextBox46">
+                          <Left>0in</Left>
+                          <Top>0in</Top>
+                          <Height>27pt</Height>
+                          <Width>72pt</Width>
+                          <Style>
+                            <BackgroundColor>#ffffff</BackgroundColor>
+                            <FontFamily>Arial</FontFamily>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <Border>
+                              <Width>1.125pt</Width>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Tenant</Value>
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                    <FontSize>9.375pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <FontFamily>Arial</FontFamily>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                        </Textbox>
+                        <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="TextBox11">
+                          <Left>0in</Left>
+                          <Top>0in</Top>
+                          <Height>27pt</Height>
+                          <Width>72pt</Width>
+                          <Style>
+                            <BackgroundColor>#ffffff</BackgroundColor>
+                            <FontFamily>Arial</FontFamily>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <Border>
+                              <Width>1.125pt</Width>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Unit</Value>
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                    <FontSize>9.375pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <FontFamily>Arial</FontFamily>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                        </Textbox>
+                        <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="TextBox6">
+                          <Left>0in</Left>
+                          <Top>0in</Top>
+                          <Height>27pt</Height>
+                          <Width>72pt</Width>
+                          <Style>
+                            <BackgroundColor>#ffffff</BackgroundColor>
+                            <FontFamily>Arial</FontFamily>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <Border>
+                              <Width>1.125pt</Width>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Charge Type</Value>
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                    <FontSize>9.375pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <FontFamily>Arial</FontFamily>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                        </Textbox>
+                        <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="TextBox26">
+                          <Left>0in</Left>
+                          <Top>0in</Top>
+                          <Height>27pt</Height>
+                          <Width>81pt</Width>
+                          <Style>
+                            <BackgroundColor>#ffffff</BackgroundColor>
+                            <FontFamily>Arial</FontFamily>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <Border>
+                              <Width>1.125pt</Width>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Index 1</Value>
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                    <FontSize>9.375pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <FontFamily>Arial</FontFamily>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                        </Textbox>
+                        <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="TextBox40">
+                          <Left>0in</Left>
+                          <Top>0in</Top>
+                          <Height>27pt</Height>
+                          <Width>135.75pt</Width>
+                          <Style>
+                            <BackgroundColor>#ffffff</BackgroundColor>
+                            <FontFamily>Arial</FontFamily>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <Border>
+                              <Width>1.125pt</Width>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Area 1</Value>
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                    <FontSize>9.375pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <FontFamily>Arial</FontFamily>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                        </Textbox>
+                        <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="TextBox48">
+                          <Left>0in</Left>
+                          <Top>0in</Top>
+                          <Height>27pt</Height>
+                          <Width>45pt</Width>
+                          <Style>
+                            <BackgroundColor>#ffffff</BackgroundColor>
+                            <FontFamily>Arial</FontFamily>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <Border>
+                              <Width>1.125pt</Width>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Index Value</Value>
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                    <FontSize>9.375pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <FontFamily>Arial</FontFamily>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                        </Textbox>
+                        <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="TextBox34">
+                          <Left>0in</Left>
+                          <Top>0in</Top>
+                          <Height>27pt</Height>
+                          <Width>81.75pt</Width>
+                          <Style>
+                            <BackgroundColor>#ffffff</BackgroundColor>
+                            <FontFamily>Arial</FontFamily>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <Border>
+                              <Width>1.125pt</Width>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Next Adjustment Date</Value>
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                    <FontSize>9.375pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <FontFamily>Arial</FontFamily>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                        </Textbox>
+                        <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="TextBox1">
+                          <Left>0in</Left>
+                          <Top>0in</Top>
+                          <Height>27pt</Height>
+                          <Width>63.75pt</Width>
+                          <Style>
+                            <BackgroundColor>#ffffff</BackgroundColor>
+                            <FontFamily>Arial</FontFamily>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <Border>
+                              <Width>1.125pt</Width>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>New Charge Amount</Value>
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                    <FontSize>9.375pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <FontFamily>Arial</FontFamily>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                        </Textbox>
+                        <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="TextBox2">
+                          <Left>0in</Left>
+                          <Top>0in</Top>
+                          <Height>27pt</Height>
+                          <Width>57.75pt</Width>
+                          <Style>
+                            <BackgroundColor>#ffffff</BackgroundColor>
+                            <FontFamily>Arial</FontFamily>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <Border>
+                              <Width>1.125pt</Width>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Current CPI Date</Value>
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                    <FontSize>9.375pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <FontFamily>Arial</FontFamily>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                        </Textbox>
+                        <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="TextBox43">
+                          <Left>0in</Left>
+                          <Top>0in</Top>
+                          <Height>27pt</Height>
+                          <Width>69pt</Width>
+                          <Style>
+                            <BackgroundColor>#ffffff</BackgroundColor>
+                            <FontFamily>Arial</FontFamily>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <Border>
+                              <Width>1.125pt</Width>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Prev Charge Amount</Value>
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                    <FontSize>9.375pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <FontFamily>Arial</FontFamily>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                        </Textbox>
+                        <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="TextBox4">
+                          <Left>0in</Left>
+                          <Top>0in</Top>
+                          <Height>27pt</Height>
+                          <Width>66.75pt</Width>
+                          <Style>
+                            <BackgroundColor>#ffffff</BackgroundColor>
+                            <FontFamily>Arial</FontFamily>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <Border>
+                              <Width>1.125pt</Width>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Previous CPI Date</Value>
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                    <FontSize>9.375pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <FontFamily>Arial</FontFamily>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                        </Textbox>
+                        <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>19.5pt</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="TextBox42">
+                          <Left>0in</Left>
+                          <Top>0in</Top>
+                          <Height>19.5pt</Height>
+                          <Width>72pt</Width>
+                          <Style>
+                            <FontFamily>Arial</FontFamily>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <Border>
+                              <Color>#e6e6e6</Color>
+                              <Style>None</Style>
+                            </Border>
+                            <BottomBorder>
+                              <Width>0.75000pt</Width>
+                              <Color>#cccccc</Color>
+                              <Style>Solid</Style>
+                            </BottomBorder>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!TENANT_NAME.Value</Value>
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <Format>M/d/yyyy</Format>
+                                    <rd:FormatType>
+                                      <rd:Format>date</rd:Format>
+                                    </rd:FormatType>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <FontFamily>Arial</FontFamily>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                        </Textbox>
+                        <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="TextBox5">
+                          <Left>0in</Left>
+                          <Top>0in</Top>
+                          <Height>19.5pt</Height>
+                          <Width>72pt</Width>
+                          <Style>
+                            <FontFamily>Arial</FontFamily>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <Border>
+                              <Color>#e6e6e6</Color>
+                              <Style>None</Style>
+                            </Border>
+                            <BottomBorder>
+                              <Width>0.75000pt</Width>
+                              <Color>#cccccc</Color>
+                              <Style>Solid</Style>
+                            </BottomBorder>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!UNIT_NAME.Value</Value>
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <Format>M/d/yyyy</Format>
+                                    <rd:FormatType>
+                                      <rd:Format>date</rd:Format>
+                                    </rd:FormatType>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <FontFamily>Arial</FontFamily>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                        </Textbox>
+                        <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="TextBox8">
+                          <Left>0in</Left>
+                          <Top>0in</Top>
+                          <Height>19.5pt</Height>
+                          <Width>72pt</Width>
+                          <Style>
+                            <FontFamily>Arial</FontFamily>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <Border>
+                              <Color>#e6e6e6</Color>
+                              <Style>None</Style>
+                            </Border>
+                            <BottomBorder>
+                              <Width>0.75000pt</Width>
+                              <Color>#cccccc</Color>
+                              <Style>Solid</Style>
+                            </BottomBorder>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!ITEM_ID.Value</Value>
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <Format>M/d/yyyy</Format>
+                                    <rd:FormatType>
+                                      <rd:Format>date</rd:Format>
+                                    </rd:FormatType>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <FontFamily>Arial</FontFamily>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                        </Textbox>
+                        <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="TextBox28">
+                          <Left>0in</Left>
+                          <Top>0in</Top>
+                          <Height>19.5pt</Height>
+                          <Width>81pt</Width>
+                          <Style>
+                            <FontFamily>Arial</FontFamily>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <Border>
+                              <Color>#e6e6e6</Color>
+                              <Style>None</Style>
+                            </Border>
+                            <BottomBorder>
+                              <Width>0.75000pt</Width>
+                              <Color>#cccccc</Color>
+                              <Style>Solid</Style>
+                            </BottomBorder>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!index_1.Value</Value>
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <Format>M/d/yyyy</Format>
+                                    <rd:FormatType>
+                                      <rd:Format>date</rd:Format>
+                                    </rd:FormatType>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <FontFamily>Arial</FontFamily>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                        </Textbox>
+                        <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="TextBox9">
+                          <Left>0in</Left>
+                          <Top>0in</Top>
+                          <Height>19.5pt</Height>
+                          <Width>135.75pt</Width>
+                          <Style>
+                            <FontFamily>Arial</FontFamily>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <Border>
+                              <Color>#e6e6e6</Color>
+                              <Style>None</Style>
+                            </Border>
+                            <BottomBorder>
+                              <Width>0.75000pt</Width>
+                              <Color>#cccccc</Color>
+                              <Style>Solid</Style>
+                            </BottomBorder>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!area_1.Value</Value>
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <Format>M/d/yyyy</Format>
+                                    <rd:FormatType>
+                                      <rd:Format>date</rd:Format>
+                                    </rd:FormatType>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <FontFamily>Arial</FontFamily>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                        </Textbox>
+                        <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="TextBox49">
+                          <Left>0in</Left>
+                          <Top>0in</Top>
+                          <Height>19.5pt</Height>
+                          <Width>45pt</Width>
+                          <Style>
+                            <FontFamily>Arial</FontFamily>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <Border>
+                              <Color>#e6e6e6</Color>
+                              <Style>None</Style>
+                            </Border>
+                            <BottomBorder>
+                              <Width>0.75000pt</Width>
+                              <Color>#cccccc</Color>
+                              <Style>Solid</Style>
+                            </BottomBorder>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!finalAdjustmentAmount.Value / Fields!previousChargeAmount.Value</Value>
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <Format>0.00%</Format>
+                                    <rd:FormatType>
+                                      <rd:Format>percentage</rd:Format>
+                                    </rd:FormatType>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <FontFamily>Arial</FontFamily>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                        </Textbox>
+                        <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="TextBox36">
+                          <Left>0in</Left>
+                          <Top>0in</Top>
+                          <Height>19.5pt</Height>
+                          <Width>81.75pt</Width>
+                          <Style>
+                            <FontFamily>Arial</FontFamily>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <Border>
+                              <Color>#e6e6e6</Color>
+                              <Style>None</Style>
+                            </Border>
+                            <BottomBorder>
+                              <Width>0.75000pt</Width>
+                              <Color>#cccccc</Color>
+                              <Style>Solid</Style>
+                            </BottomBorder>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!next_cpi_date.Value</Value>
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <Format>MM/dd/yyyy</Format>
+                                    <rd:FormatType>
+                                      <rd:Format>date</rd:Format>
+                                    </rd:FormatType>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <FontFamily>Arial</FontFamily>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                        </Textbox>
+                        <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="TextBox3">
+                          <Left>0in</Left>
+                          <Top>0in</Top>
+                          <Height>19.5pt</Height>
+                          <Width>63.75pt</Width>
+                          <Style>
+                            <FontFamily>Arial</FontFamily>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2.775pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <Border>
+                              <Color>#e6e6e6</Color>
+                              <Style>None</Style>
+                            </Border>
+                            <BottomBorder>
+                              <Width>0.75000pt</Width>
+                              <Color>#cccccc</Color>
+                              <Style>Solid</Style>
+                            </BottomBorder>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!newChargeAmount.Value</Value>
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <Format>'$'#,0.00;('$'#,0.00)</Format>
+                                    <rd:FormatType>
+                                      <rd:Format>Currency</rd:Format>
+                                      <rd:Representation>None</rd:Representation>
+                                      <rd:NegativeValue>($12345)</rd:NegativeValue>
+                                      <rd:Culture>English (United States)</rd:Culture>
+                                    </rd:FormatType>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <FontFamily>Arial</FontFamily>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                        </Textbox>
+                        <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="TextBox22">
+                          <Left>0in</Left>
+                          <Top>0in</Top>
+                          <Height>19.5pt</Height>
+                          <Width>57.75pt</Width>
+                          <Style>
+                            <FontFamily>Arial</FontFamily>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2.775pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <Border>
+                              <Color>#e6e6e6</Color>
+                              <Style>None</Style>
+                            </Border>
+                            <BottomBorder>
+                              <Width>0.75000pt</Width>
+                              <Color>#cccccc</Color>
+                              <Style>Solid</Style>
+                            </BottomBorder>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!current_cpi_date.Value</Value>
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <Format>MM/dd/yyyy</Format>
+                                    <rd:FormatType>
+                                      <rd:Format>date</rd:Format>
+                                    </rd:FormatType>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <FontFamily>Arial</FontFamily>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                        </Textbox>
+                        <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="TextBox7">
+                          <Left>0in</Left>
+                          <Top>0in</Top>
+                          <Height>19.5pt</Height>
+                          <Width>69pt</Width>
+                          <Style>
+                            <FontFamily>Arial</FontFamily>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2.775pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <Border>
+                              <Color>#e6e6e6</Color>
+                              <Style>None</Style>
+                            </Border>
+                            <BottomBorder>
+                              <Width>0.75000pt</Width>
+                              <Color>#cccccc</Color>
+                              <Style>Solid</Style>
+                            </BottomBorder>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!previousChargeAmount.Value</Value>
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <Format>'$'#,0.00;('$'#,0.00)</Format>
+                                    <rd:FormatType>
+                                      <rd:Format>Currency</rd:Format>
+                                      <rd:Representation>None</rd:Representation>
+                                      <rd:NegativeValue>($12345)</rd:NegativeValue>
+                                      <rd:Culture>English (United States)</rd:Culture>
+                                    </rd:FormatType>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <FontFamily>Arial</FontFamily>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                        </Textbox>
+                        <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="TextBox17">
+                          <Left>0in</Left>
+                          <Top>0in</Top>
+                          <Height>19.5pt</Height>
+                          <Width>66.75pt</Width>
+                          <Style>
+                            <FontFamily>Arial</FontFamily>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2.775pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <Border>
+                              <Color>#e6e6e6</Color>
+                              <Style>None</Style>
+                            </Border>
+                            <BottomBorder>
+                              <Width>0.75000pt</Width>
+                              <Color>#cccccc</Color>
+                              <Style>Solid</Style>
+                            </BottomBorder>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!previous_cpi_date.Value</Value>
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <Format>MM/dd/yyyy</Format>
+                                    <rd:FormatType>
+                                      <rd:Format>date</rd:Format>
+                                    </rd:FormatType>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <FontFamily>Arial</FontFamily>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                        </Textbox>
+                        <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+              </TablixRows>
+            </TablixBody>
+            <TablixColumnHierarchy>
+              <TablixMembers>
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+              </TablixMembers>
+            </TablixColumnHierarchy>
+            <TablixRowHierarchy>
+              <TablixMembers>
+                <TablixMember>
+                  <TablixHeader>
+                    <Size>125.25pt</Size>
+                    <CellContents>
+                      <Textbox Name="TextBox55">
+                        <Left>0in</Left>
+                        <Top>0in</Top>
+                        <Height>27pt</Height>
+                        <Width>125.25pt</Width>
+                        <Style>
+                          <BackgroundColor>#ffffff</BackgroundColor>
+                          <FontFamily>Arial</FontFamily>
+                          <VerticalAlign>Middle</VerticalAlign>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                          <Border>
+                            <Width>1.125pt</Width>
+                            <Style>Solid</Style>
+                          </Border>
+                        </Style>
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>Property</Value>
+                                <Style>
+                                  <FontFamily>Arial</FontFamily>
+                                  <FontSize>9.375pt</FontSize>
+                                  <FontWeight>Bold</FontWeight>
+                                  <Color>#000000</Color>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style>
+                              <FontFamily>Arial</FontFamily>
+                              <TextAlign>Center</TextAlign>
+                            </Style>
+                          </Paragraph>
+                        </Paragraphs>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
+                  <TablixMembers>
+                    <TablixMember>
+                      <KeepWithGroup>After</KeepWithGroup>
+                      <RepeatOnNewPage>true</RepeatOnNewPage>
+                    </TablixMember>
+                  </TablixMembers>
+                  <KeepWithGroup>After</KeepWithGroup>
+                  <RepeatOnNewPage>true</RepeatOnNewPage>
+                </TablixMember>
+                <TablixMember>
+                  <Group Name="PROP_NAME1">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!PROP_NAME.Value</GroupExpression>
+                    </GroupExpressions>
+                  </Group>
+                  <SortExpressions>
+                    <SortExpression>
+                      <Value>=Fields!PROP_NAME.Value</Value>
+                      <Direction>Ascending</Direction>
+                    </SortExpression>
+                  </SortExpressions>
+                  <TablixHeader>
+                    <Size>125.25pt</Size>
+                    <CellContents>
+                      <Textbox Name="TextBox57">
+                        <Left>0in</Left>
+                        <Top>0in</Top>
+                        <Height>19.5pt</Height>
+                        <Width>125.25pt</Width>
+                        <Style>
+                          <FontFamily>Arial</FontFamily>
+                          <VerticalAlign>Top</VerticalAlign>
+                          <PaddingLeft>2.775pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                          <Border>
+                            <Color>#e6e6e6</Color>
+                            <Style>None</Style>
+                          </Border>
+                          <BottomBorder>
+                            <Width>0.75000pt</Width>
+                            <Color>#cccccc</Color>
+                            <Style>Solid</Style>
+                          </BottomBorder>
+                        </Style>
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>=Fields!PROP_NAME.Value</Value>
+                                <Style>
+                                  <FontFamily>Arial</FontFamily>
+                                  <FontSize>9.75pt</FontSize>
+                                  <FontWeight>SemiBold</FontWeight>
+                                  <Color>#000000</Color>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style>
+                              <FontFamily>Arial</FontFamily>
+                              <TextAlign>Center</TextAlign>
+                            </Style>
+                          </Paragraph>
+                        </Paragraphs>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
+                  <TablixMembers>
+                    <TablixMember>
+                      <Group Name="Details1" />
+                      <TablixMembers>
+                        <TablixMember />
+                      </TablixMembers>
+                    </TablixMember>
+                  </TablixMembers>
+                </TablixMember>
+              </TablixMembers>
+            </TablixRowHierarchy>
+            <RepeatRowHeaders>true</RepeatRowHeaders>
+          </Tablix>
+        </ReportItems>
+        <Style>
+          <FontFamily>Arial</FontFamily>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Body>
+      <Width>942pt</Width>
+      <Page>
+        <PageHeight>612pt</PageHeight>
+        <PageWidth>1008pt</PageWidth>
+        <PageHeader>
+          <Height>60.75pt</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <ReportItems>
+            <Textbox Name="TextBox13">
+              <Left>358.0594pt</Left>
+              <Top>14.63775pt</Top>
+              <Height>31.48125pt</Height>
+              <Width>223.48126pt</Width>
+              <Style>
+                <FontFamily>Arial</FontFamily>
+                <VerticalAlign>Middle</VerticalAlign>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+              </Style>
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>CPI Report DBT</Value>
+                      <Style>
+                        <FontFamily>Arial</FontFamily>
+                        <FontSize>16.5pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                        <Color>#000000</Color>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <FontFamily>Arial</FontFamily>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+            </Textbox>
+            <Textbox Name="TextBox18">
+              <Left>787.125pt</Left>
+              <Top>13.05pt</Top>
+              <Height>18.75pt</Height>
+              <Width>135pt</Width>
+              <Style>
+                <FontFamily>Arial</FontFamily>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+              </Style>
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Sage Intacct Real Estate</Value>
+                      <Style>
+                        <FontFamily>Arial</FontFamily>
+                        <FontSize>9.99998pt</FontSize>
+                        <FontWeight>SemiBold</FontWeight>
+                        <Color>#000000</Color>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <FontFamily>Arial</FontFamily>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+            </Textbox>
+            <Textbox Name="TextBox20">
+              <Left>850.85626pt</Left>
+              <Top>31.8375pt</Top>
+              <Height>18.75pt</Height>
+              <Width>73.125pt</Width>
+              <Style>
+                <FontFamily>Arial</FontFamily>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+              </Style>
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Globals!ExecutionTime</Value>
+                      <Style>
+                        <FontFamily>Arial</FontFamily>
+                        <FontSize>9.99998pt</FontSize>
+                        <FontWeight>SemiBold</FontWeight>
+                        <Format>MM/dd/yyyy</Format>
+                        <rd:FormatType>
+                          <rd:Format>date</rd:Format>
+                        </rd:FormatType>
+                        <Color>#000000</Color>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <FontFamily>Arial</FontFamily>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+            </Textbox>
+            <Textbox Name="TextBox37">
+              <Left>5.95739pt</Left>
+              <Top>33.70738pt</Top>
+              <Height>18.75pt</Height>
+              <Width>65.25pt</Width>
+              <Style>
+                <FontFamily>Arial</FontFamily>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+              </Style>
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>As of Date:</Value>
+                      <Style>
+                        <FontFamily>Arial</FontFamily>
+                        <FontSize>9.99998pt</FontSize>
+                        <FontWeight>SemiBold</FontWeight>
+                        <Color>#000000</Color>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <FontFamily>Arial</FontFamily>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+            </Textbox>
+            <Textbox Name="TextBox38">
+              <Left>70.05937pt</Left>
+              <Top>33.70313pt</Top>
+              <Height>18.75pt</Height>
+              <Width>96pt</Width>
+              <Style>
+                <FontFamily>Arial</FontFamily>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+              </Style>
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Parameters!AsOfDate.Value</Value>
+                      <Style>
+                        <FontFamily>Arial</FontFamily>
+                        <FontSize>9.99998pt</FontSize>
+                        <FontWeight>SemiBold</FontWeight>
+                        <Format>M/d/yyyy</Format>
+                        <rd:FormatType>
+                          <rd:Format>date</rd:Format>
+                        </rd:FormatType>
+                        <Color>#000000</Color>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <FontFamily>Arial</FontFamily>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+            </Textbox>
+            <Textbox Name="TextBox39">
+              <Left>787.875pt</Left>
+              <Top>31.8375pt</Top>
+              <Height>18.75pt</Height>
+              <Width>65.625pt</Width>
+              <Style>
+                <FontFamily>Arial</FontFamily>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+              </Style>
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value />
+                      <Style>
+                        <FontFamily>Arial</FontFamily>
+                        <FontSize>9.99998pt</FontSize>
+                        <FontWeight>SemiBold</FontWeight>
+                        <Color>#000000</Color>
+                      </Style>
+                    </TextRun>
+                    <TextRun>
+                      <Value>Report Date:</Value>
+                      <Style>
+                        <FontFamily>Arial</FontFamily>
+                        <FontSize>9.99998pt</FontSize>
+                        <FontWeight>SemiBold</FontWeight>
+                        <Color>#000000</Color>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <FontFamily>Arial</FontFamily>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+            </Textbox>
+          </ReportItems>
+          <Style>
+            <BackgroundColor>#ffffff</BackgroundColor>
+            <FontFamily>Arial</FontFamily>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </PageHeader>
+        <PageFooter>
+          <Height>38.25pt</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <ReportItems>
+            <Textbox Name="TextBox19">
+              <Left>12.74063pt</Left>
+              <Top>10.125pt</Top>
+              <Height>19.5pt</Height>
+              <Width>210pt</Width>
+              <Style>
+                <FontFamily>Arial</FontFamily>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+              </Style>
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value />
+                      <Style>
+                        <FontFamily>Arial</FontFamily>
+                        <FontSize>9.99998pt</FontSize>
+                        <Color>#000000</Color>
+                      </Style>
+                    </TextRun>
+                    <TextRun>
+                      <Value>Copyright 1999 - 2025 Sage Intacct, Inc.</Value>
+                      <Style>
+                        <FontFamily>Arial</FontFamily>
+                        <FontSize>9.99998pt</FontSize>
+                        <Color>#000000</Color>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <FontFamily>Arial</FontFamily>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+            </Textbox>
+            <Textbox Name="TextBox27">
+              <Left>866.8125pt</Left>
+              <Top>12.30938pt</Top>
+              <Height>18pt</Height>
+              <Width>39.75001pt</Width>
+              <Style>
+                <FontFamily>Arial</FontFamily>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+              </Style>
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Globals!PageNumber</Value>
+                      <Style>
+                        <FontFamily>Arial</FontFamily>
+                        <FontSize>9.99998pt</FontSize>
+                        <FontWeight>SemiBold</FontWeight>
+                        <Format>0;(0)</Format>
+                        <rd:FormatType>
+                          <rd:Format>Number</rd:Format>
+                          <rd:Representation>None</rd:Representation>
+                          <rd:NegativeValue>(12345)</rd:NegativeValue>
+                        </rd:FormatType>
+                        <Color>#000000</Color>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <FontFamily>Arial</FontFamily>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+            </Textbox>
+          </ReportItems>
+          <Style>
+            <BackgroundColor>#ffffff</BackgroundColor>
+            <FontFamily>Arial</FontFamily>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </PageFooter>
+        <LeftMargin>60pt</LeftMargin>
+        <RightMargin>3pt</RightMargin>
+        <TopMargin>3pt</TopMargin>
+        <BottomMargin>3pt</BottomMargin>
+        <Style>
+          <FontFamily>Arial</FontFamily>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <DataSources>
+    <DataSource Name="SIRE_PROD">
+      <rd:SecurityType>None</rd:SecurityType>
+      <DataSourceReference>55a93b7d-fb73-4975-8a82-1b496e04ee25</DataSourceReference>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="Properties">
+      <Query>
+        <DataSourceName>SIRE_PROD</DataSourceName>
+        <CommandText>SELECT  "reporting"."stg_properties"."prop_name" AS "PROP_NAME" 
+
+FROM  "reporting"."stg_properties"
+
+WHERE CAST("reporting"."stg_properties"."company_relation_id" AS INT)  = CAST(@REAL_COMPANY_ID AS INT)
+ AND "reporting"."stg_properties"."entity_id" IN (@Entity_Id)
+AND "reporting"."stg_properties"."property_status" = 'Active'
+
+GROUP BY  "reporting"."stg_properties"."prop_name"
+
+ORDER BY "reporting"."stg_properties"."prop_name" asc
+
+
+
+</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@REAL_COMPANY_ID">
+            <Value>=Parameters!REAL_COMPANY_ID.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@Entity_Id">
+            <Value>=Parameters!Entity_Id.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+      </Query>
+      <Fields>
+        <Field Name="PROP_NAME">
+          <DataField>PROP_NAME</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="Lease_cpi">
+      <Query>
+        <DataSourceName>SIRE_PROD</DataSourceName>
+        <CommandText>WITH CHARGES_CPI_TOT AS (
+  SELECT 
+		"reporting"."stg_lease_recurring_charges"."recurring_charge_id" AS "RCHARGE_ID",
+  		"reporting"."stg_lease_recurring_charges"."lease_id" AS "LEASE_ID",
+  		"reporting"."stg_lease_recurring_charges"."item_id" "ITEM_ID",
+  		"reporting"."stg_units"."property_id" "PROP_ID",
+  		"reporting"."stg_lease_recurring_charges"."unit_id" "UNIT_ID",
+  		
+  		"reporting"."stg_cpi_history"."cpi_history_created_at" "cpi_history_created_at",
+  		("reporting"."stg_cpi_history"."charges_detail" -&gt;&gt; 'newChargeAmount')::NUMERIC(10,2)  AS "newChargeAmount",
+  		("reporting"."stg_cpi_history"."charges_detail" -&gt;&gt; 'previousChargeAmount')::NUMERIC(10,2)  AS "previousChargeAmount",
+  		"reporting"."stg_cpi_history"."charges_detail" -&gt;&gt; 'finalAdjustmentAmount' AS "finalAdjustmentAmount",
+    	("reporting"."stg_cpi_history"."calculation_details" -&gt;&gt; 'currentCPIDate')::timestamptz AS "current_cpi_date",
+  		("reporting"."stg_cpi_history"."calculation_details" -&gt;&gt; 'previousCPIDate')::timestamptz AS "previous_cpi_date",
+  		
+  		"reporting"."stg_lease_recurring_charge_cpi_controls"."next_adjustment_date" AS "next_cpi_date",
+  		"reporting"."stg_lease_recurring_charge_cpi_controls"."index_1" AS "index_1",
+  		"reporting"."stg_lease_recurring_charge_cpi_controls"."area_1" AS "area_1",
+  		"reporting"."stg_lease_recurring_charge_cpi_controls"."floor_percent" AS "floor_percent",
+		
+  		"reporting"."stg_properties"."prop_name" as "PROP_NAME",
+  		"reporting"."stg_units"."unit_name" as "UNIT_NAME",
+  		"reporting"."stg_leases"."lease_name" as "LEASE_NAME",
+  		"reporting"."stg_tenants"."tenant_name" as "TENANT_NAME"
+  
+	FROM "reporting"."stg_lease_recurring_charges"
+ 	 INNER JOIN "reporting"."stg_units" ON "reporting"."stg_lease_recurring_charges"."unit_id" =  "reporting"."stg_units"."unit_id"
+  	INNER JOIN "reporting"."stg_properties" ON "reporting"."stg_properties"."property_id" = "reporting"."stg_units"."property_id"
+  	INNER JOIN "reporting"."stg_leases" ON "reporting"."stg_lease_recurring_charges"."lease_id"  = "reporting"."stg_leases"."lease_id"
+  	INNER JOIN "reporting"."stg_tenants" ON "reporting"."stg_tenants"."tenant_id"  = "reporting"."stg_leases"."primary_tenant_id"
+  	INNER JOIN "reporting"."stg_lease_recurring_charge_cpi_controls" ON "reporting"."stg_lease_recurring_charge_cpi_controls"."lease_recurring_charge_id"  = "reporting"."stg_lease_recurring_charges"."recurring_charge_id"
+  	LEFT JOIN "reporting"."stg_cpi_history" ON "reporting"."stg_cpi_history"."recurring_charge_id" = "reporting"."stg_lease_recurring_charges"."recurring_charge_id"
+  
+  	WHERE "reporting"."stg_tenants"."deleted_at" IS NULL
+  	AND "reporting"."stg_properties"."deleted_at" IS NULL
+  	AND "reporting"."stg_leases"."deleted_at" IS NULL
+	AND	"reporting"."stg_lease_recurring_charges"."deleted_at" IS NULL
+  	AND "reporting"."stg_lease_recurring_charge_cpi_controls"."deleted_at" is NULL 
+  	AND "reporting"."stg_cpi_history"."deleted_at" is NULL 
+	AND ("reporting"."stg_lease_recurring_charges"."terminate_date" &gt;= (@AsOfDate) or "reporting"."stg_lease_recurring_charges"."terminate_date" IS NULL
+		OR  CASE WHEN CAST("reporting"."stg_leases"."month_to_month_flag" AS TEXT) ='true' THEN 'True' ELSE 'False' END IN (@month_to_month) 
+		)
+  	AND CAST("reporting"."stg_properties"."company_relation_id" AS INT) = CAST(@REAL_COMPANY_ID AS INT)
+  	AND "reporting"."stg_properties"."prop_name" IN (@Property_Name)
+  	AND CAST("reporting"."stg_leases"."lease_raw_status" AS TEXT) IN (@Lease_Status)
+  	AND "reporting"."stg_lease_recurring_charges"."item_id" in (@Item_Id)
+	),
+MAX_CHARGES_CPI_TOT AS (
+ 	SELECT  "RCHARGE_ID" "RCHARGE_ID",
+   	MAX("cpi_history_created_at") "cpi_history_created_at"
+ 	FROM CHARGES_CPI_TOT
+	GROUP BY "RCHARGE_ID"
+ ),
+ CHARGES_CPI AS ( 
+ SELECT CHARGES_CPI_TOT.*
+ FROM CHARGES_CPI_TOT
+ INNER JOIN MAX_CHARGES_CPI_TOT
+ 	ON CHARGES_CPI_TOT."RCHARGE_ID" =  MAX_CHARGES_CPI_TOT."RCHARGE_ID" 
+	AND CHARGES_CPI_TOT."cpi_history_created_at" =  MAX_CHARGES_CPI_TOT."cpi_history_created_at"
+)
+SELECT *
+FROM CHARGES_CPI</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@REAL_COMPANY_ID">
+            <Value>=Parameters!REAL_COMPANY_ID.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@AsOfDate">
+            <Value>=Parameters!AsOfDate.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@Property_Name">
+            <Value>=Parameters!Property_Name.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@month_to_month">
+            <Value>=Parameters!month_to_month.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@Lease_Status">
+            <Value>=Parameters!Lease_Status.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@Item_Id">
+            <Value>=Parameters!Item_Id.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+      </Query>
+      <Fields>
+        <Field Name="RCHARGE_ID">
+          <DataField>RCHARGE_ID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="LEASE_ID">
+          <DataField>LEASE_ID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ITEM_ID">
+          <DataField>ITEM_ID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="PROP_ID">
+          <DataField>PROP_ID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="UNIT_ID">
+          <DataField>UNIT_ID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="cpi_history_created_at">
+          <DataField>cpi_history_created_at</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="newChargeAmount">
+          <DataField>newChargeAmount</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="previousChargeAmount">
+          <DataField>previousChargeAmount</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="finalAdjustmentAmount">
+          <DataField>finalAdjustmentAmount</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="current_cpi_date">
+          <DataField>current_cpi_date</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="previous_cpi_date">
+          <DataField>previous_cpi_date</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="next_cpi_date">
+          <DataField>next_cpi_date</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="index_1">
+          <DataField>index_1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="area_1">
+          <DataField>area_1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="floor_percent">
+          <DataField>floor_percent</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="PROP_NAME">
+          <DataField>PROP_NAME</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="UNIT_NAME">
+          <DataField>UNIT_NAME</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="LEASE_NAME">
+          <DataField>LEASE_NAME</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TENANT_NAME">
+          <DataField>TENANT_NAME</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="Lease_Status_parameter">
+      <Query>
+        <DataSourceName>SIRE_PROD</DataSourceName>
+        <CommandText>SELECT distinct "reporting"."stg_leases"."lease_raw_status" "LEASE_STATUS"
+
+FROM "reporting"."stg_leases"
+INNER  JOIN "reporting"."stg_lease_units" ON "reporting"."stg_leases"."lease_id"="reporting"."stg_lease_units"."lease_id"
+INNER  JOIN "reporting"."stg_units" ON "reporting"."stg_units"."unit_id"="reporting"."stg_lease_units"."unit_id"
+INNER  JOIN "reporting"."stg_properties" ON "reporting"."stg_units"."property_id"="reporting"."stg_properties"."property_id"
+
+WHERE CAST("reporting"."stg_properties"."company_relation_id" AS INT) = CAST(@REAL_COMPANY_ID AS INT)
+    AND "reporting"."stg_properties"."prop_name" IN (@Property_Name)
+    
+GROUP BY "reporting"."stg_leases"."lease_raw_status" </CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@Property_Name">
+            <Value>=Parameters!Property_Name.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@REAL_COMPANY_ID">
+            <Value>=Parameters!REAL_COMPANY_ID.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+      </Query>
+      <Fields>
+        <Field Name="LEASE_STATUS">
+          <DataField>LEASE_STATUS</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="EntityId_parameter">
+      <Query>
+        <DataSourceName>SIRE_PROD</DataSourceName>
+        <CommandText>SELECT  "reporting"."stg_properties"."entity_id" AS "ENTITY_ID" 
+
+FROM  "reporting"."stg_properties"
+
+WHERE CAST("reporting"."stg_properties"."company_relation_id" AS INT)  = CAST(@REAL_COMPANY_ID AS INT)
+ and "reporting"."stg_properties"."deleted_at" IS NULL
+
+GROUP BY  "reporting"."stg_properties"."entity_id"
+
+ORDER BY "reporting"."stg_properties"."entity_id" asc</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@REAL_COMPANY_ID">
+            <Value>=Parameters!REAL_COMPANY_ID.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+      </Query>
+      <Fields>
+        <Field Name="ENTITY_ID">
+          <DataField>ENTITY_ID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="ItemId">
+      <Query>
+        <DataSourceName>SIRE_PROD</DataSourceName>
+        <CommandText>SELECT DISTINCT "reporting"."stg_lease_recurring_charges"."item_id" AS "ITEM_ID"
+
+FROM "reporting"."stg_lease_recurring_charges"
+INNER JOIN "reporting"."stg_units" ON "stg_lease_recurring_charges"."unit_id" =  "stg_units"."unit_id"
+INNER  JOIN "reporting"."stg_properties" ON "reporting"."stg_units"."property_id"="reporting"."stg_properties"."property_id"
+
+WHERE ( "stg_lease_recurring_charges"."deleted_at" IS NULL)
+	AND ("stg_lease_recurring_charges"."terminate_date" &gt;= @AsOfDate OR "stg_lease_recurring_charges"."terminate_date" IS NULL)
+	AND "reporting"."stg_properties"."prop_name" IN (@Property_Name)
+	AND CAST("reporting"."stg_properties"."company_relation_id" AS INT) = CAST(@REAL_COMPANY_ID AS INT)</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@AsOfDate">
+            <Value>=Parameters!AsOfDate.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@Property_Name">
+            <Value>=Parameters!Property_Name.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@REAL_COMPANY_ID">
+            <Value>=Parameters!REAL_COMPANY_ID.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+      </Query>
+      <Fields>
+        <Field Name="ITEM_ID">
+          <DataField>ITEM_ID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="month_to_month_parameter">
+      <Query>
+        <DataSourceName>SIRE_PROD</DataSourceName>
+        <CommandText>SELECT CASE WHEN CAST("reporting"."stg_leases"."month_to_month_flag" AS TEXT) ='true' THEN 'True' ELSE 'False' END "M_t_M"
+
+FROM "reporting"."stg_leases"
+INNER  JOIN "reporting"."stg_lease_units" ON "reporting"."stg_leases"."lease_id"="reporting"."stg_lease_units"."lease_id"
+INNER  JOIN "reporting"."stg_units" ON "reporting"."stg_units"."unit_id"="reporting"."stg_lease_units"."unit_id"
+INNER  JOIN "reporting"."stg_properties" ON "reporting"."stg_units"."property_id"="reporting"."stg_properties"."property_id"
+
+WHERE  CAST("reporting"."stg_properties"."company_relation_id" AS INT) = CAST(@REAL_COMPANY_ID AS INT)
+    AND "reporting"."stg_properties"."prop_name" IN (@Property_Name)
+    
+GROUP BY "reporting"."stg_leases"."month_to_month_flag" </CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@REAL_COMPANY_ID">
+            <Value>=Parameters!REAL_COMPANY_ID.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@Property_Name">
+            <Value>=Parameters!Property_Name.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+      </Query>
+      <Fields>
+        <Field Name="M_t_M">
+          <DataField>M_t_M</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <ReportParameters>
+    <ReportParameter Name="Entity_Id">
+      <DataType>String</DataType>
+      <Prompt>Entity ID</Prompt>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>EntityId_parameter</DataSetName>
+          <ValueField>ENTITY_ID</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>EntityId_parameter</DataSetName>
+          <ValueField>ENTITY_ID</ValueField>
+          <LabelField>ENTITY_ID</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+    <ReportParameter Name="Property_Name">
+      <DataType>String</DataType>
+      <Prompt>Property Name</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>Properties</DataSetName>
+          <ValueField>PROP_NAME</ValueField>
+          <LabelField>PROP_NAME</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+    <ReportParameter Name="AsOfDate">
+      <DataType>DateTime</DataType>
+      <Prompt>As of Date</Prompt>
+      <DefaultValue>
+        <Values>
+          <Value>=Today()</Value>
+        </Values>
+      </DefaultValue>
+    </ReportParameter>
+    <ReportParameter Name="Lease_Status">
+      <DataType>String</DataType>
+      <Prompt>Lease Status</Prompt>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>Lease_Status_parameter</DataSetName>
+          <ValueField>LEASE_STATUS</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>Lease_Status_parameter</DataSetName>
+          <ValueField>LEASE_STATUS</ValueField>
+          <LabelField>LEASE_STATUS</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+    <ReportParameter Name="Item_Id">
+      <DataType>String</DataType>
+      <Prompt>Item Id</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>ItemId</DataSetName>
+          <ValueField>ITEM_ID</ValueField>
+          <LabelField>ITEM_ID</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+    <ReportParameter Name="month_to_month">
+      <DataType>String</DataType>
+      <Prompt>month_to_month</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>month_to_month_parameter</DataSetName>
+          <ValueField>M_t_M</ValueField>
+          <LabelField>M_t_M</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+    <ReportParameter Name="REAL_COMPANY_ID">
+      <DataType>String</DataType>
+      <Prompt>REAL_COMPANY_ID</Prompt>
+      <Hidden>true</Hidden>
+    </ReportParameter>
+  </ReportParameters>
+  <ReportParametersLayout>
+    <GridLayoutDefinition>
+      <NumberOfColumns>4</NumberOfColumns>
+      <NumberOfRows>2</NumberOfRows>
+      <CellDefinitions>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>Entity_Id</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>Property_Name</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>2</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>AsOfDate</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>3</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>Lease_Status</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>1</RowIndex>
+          <ParameterName>Item_Id</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>1</RowIndex>
+          <ParameterName>month_to_month</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>2</ColumnIndex>
+          <RowIndex>1</RowIndex>
+          <ParameterName>REAL_COMPANY_ID</ParameterName>
+        </CellDefinition>
+      </CellDefinitions>
+    </GridLayoutDefinition>
+  </ReportParametersLayout>
+  <CustomProperties>
+    <CustomProperty>
+      <Name>AscendingParameters</Name>
+      <Value>Entity_Id,Property_Name,Lease_Status,Item_Id,month_to_month</Value>
+    </CustomProperty>
+    <CustomProperty>
+      <Name>UniqueValueParameters</Name>
+      <Value>Entity_Id,Property_Name,Lease_Status,Item_Id,month_to_month</Value>
+    </CustomProperty>
+    <CustomProperty>
+      <Name>EnableFilterSearch</Name>
+      <Value>true</Value>
+    </CustomProperty>
+  </CustomProperties>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:PageUnit>Px</rd:PageUnit>
+  <df:DefaultFontFamily>Segoe UI</df:DefaultFontFamily>
+</Report>
